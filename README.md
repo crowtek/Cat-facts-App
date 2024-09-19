@@ -1,46 +1,92 @@
-# Getting Started with Create React App
+# Cat Facts App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a simple React app that fetches random cat facts from the [Cat Fact API](https://catfact.ninja/). It follows best practices in code organization, error handling, and separation of concerns, demonstrating various skills expected of a frontend developer.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Demo Screenshot
 
-### `npm start`
+![App Screenshot](./screenshot.png)  
+_Replace this line with an actual screenshot of your app._
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Fetches a random cat fact from an API on page load.
+- Displays the fetched cat fact in a clean, styled card.
+- Provides a button to fetch another cat fact without reloading the page.
+- Handles loading and error states, providing feedback to the user.
+- Mobile-responsive design.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Best Practices Implemented
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1. **Separation of Concerns**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Custom Hooks**: The data-fetching logic is separated into a custom hook (`useCatFact`) to keep component logic clean and reusable.
+- **Component Splitting**: UI components (`CatFactDisplay` and `CatFactButton`) are broken down into smaller, reusable units, making the app scalable and easier to manage.
+- **Service Layer**: API calls are managed in a separate service (`catFactService.ts`), isolating external logic from the UI.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 2. **Error Handling**
 
-### `npm run eject`
+- The app implements robust error handling for API failures. If the API request fails, a user-friendly error message is displayed, instead of crashing the app.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### 3. **Loading State**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- A loading state is shown to the user while fetching data, improving the user experience by indicating that data is being fetched.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 4. **CSS BEM Naming Convention**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- The CSS classes follow the Block-Element-Modifier (BEM) naming convention, making the styles more maintainable and modular.
 
-## Learn More
+### 5. **Accessibility**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- The image has a descriptive `alt` tag, improving accessibility for screen readers.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 6. **Resilient UI**
+
+- The "Show Another Fact" button is disabled during the loading state to prevent multiple fetch requests from being triggered simultaneously.
+
+---
+
+## Skills Demonstrated
+
+### 1. **React & TypeScript**
+
+- Usage of React with TypeScript to enforce type safety.
+- Application of hooks (`useState`, `useEffect`) and custom hooks to manage side effects and state.
+
+### 2. **Component-Based Architecture**
+
+- Understanding of breaking down UI into modular, reusable components for scalability and reusability.
+
+### 3. **Asynchronous JavaScript (Promises & `async/await`)**
+
+- Proper handling of asynchronous API requests with `fetch` and `async/await`.
+
+### 4. **Error and Loading States**
+
+- Managing loading and error states to improve the user experience.
+
+### 5. **CSS Styling & BEM**
+
+- Clean, responsive styling with CSS following the BEM naming convention for clarity and scalability.
+
+### 6. **API Integration**
+
+- Fetching data from a third-party API and integrating it into a user-friendly interface.
+
+### 7. **Separation of Logic**
+
+- Service layer abstraction for API calls and separating UI from business logic using custom hooks.
+
+---
+
+## Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/cat-facts-app.git
+   ```

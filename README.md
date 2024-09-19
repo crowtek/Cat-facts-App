@@ -6,10 +6,7 @@ This project is a simple React app that fetches random cat facts from the [Cat F
 
 ## Demo Screenshot
 
-![App Screenshot](./screenshot.png)  
-_Replace this line with an actual screenshot of your app._
-
----
+![App Screenshot](./Screenshot.png)
 
 ## Features
 

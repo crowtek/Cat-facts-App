@@ -4,6 +4,12 @@ This project is a simple React app that fetches random cat facts from the [Cat F
 
 ---
 
+## Live Demo
+
+You can try the live version of the app here:
+
+[Cat Facts App - Live Demo](https://cat-facts-omega.vercel.app/)
+
 ## Demo Screenshot
 
 ![App Screenshot](./Screenshot.png)

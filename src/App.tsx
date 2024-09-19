@@ -1,29 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
-
-interface CatFact {
-  fact: string;
-  length: number;
-}
+import useCatFact from './hooks/useCatFact';
+import CatFactDisplay from './components/CatFactDisplay';
+import CatFactButton from './components/CatFactButton';
 
 const App: React.FC = () => {
-  const [catFact, setCatFact] = useState<string>('');
-
-  const fetchCatFact = async () => {
-    try {
-      const response = await fetch('https://catfact.ninja/fact');
-      const data: CatFact = await response.json();
-      setCatFact(data.fact);
-    } catch (error) {
-      console.error('Error fetching cat fact:', error);
-      setCatFact('Failed to load cat fact.');
-    }
-  };
-
-  // Fetch cat fact on component mount
-  useEffect(() => {
-    fetchCatFact();
-  }, []);
+  const { catFact, loading, error, getCatFact } = useCatFact();
 
   return (
     <div className='app'>
@@ -33,8 +15,8 @@ const App: React.FC = () => {
       <div className='cat-fact-container'>
         <div className='cat-fact-card'>
           <h1>Random Cat Fact</h1>
-          <p>{catFact}</p>
-          <button onClick={fetchCatFact}>Show Another Fact</button>
+          <CatFactDisplay catFact={catFact} loading={loading} error={error} />
+          <CatFactButton onClick={getCatFact} loading={loading} />
         </div>
       </div>
     </div>

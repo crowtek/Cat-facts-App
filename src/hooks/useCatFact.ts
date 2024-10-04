@@ -1,6 +1,6 @@
 // src/hooks/useCatFact.ts
 import { useState, useEffect } from 'react';
-import { fetchCatFact, CatFact } from '../services/catFactService';
+import { fetchCatFact, CatFact } from '../services/fetchCatFact';
 
 const useCatFact = () => {
   const [catFact, setCatFact] = useState<string>('');

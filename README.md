@@ -1,6 +1,6 @@
 # Cat Facts App
 
-This project is a simple React app that fetches random cat facts from the [Cat Fact API](https://catfact.ninja/). It follows best practices in code organization, error handling, and separation of concerns, demonstrating various skills expected of a frontend developer.
+This project is a simple React app that fetches random cat facts from the [Cat Fact API](https://catfact.ninja/). It follows best practices in code organization, error handling, separation of concerns, and demonstrates frontend developer skills. It also includes comprehensive testing to ensure the app behaves as expected.
 
 ---
 
@@ -21,6 +21,7 @@ You can try the live version of the app here:
 - Provides a button to fetch another cat fact without reloading the page.
 - Handles loading and error states, providing feedback to the user.
 - Mobile-responsive design.
+- Includes unit and integration tests for key app functionality.
 
 ---
 
@@ -87,9 +88,19 @@ You can try the live version of the app here:
 
 ---
 
-## Installation & Setup
+## Testing
 
-1. Clone the repository:
+The app includes comprehensive testing to ensure reliability and robustness. It uses Jest and React Testing Library for unit and integration testing.
+
+### Key Test Cases:
+
+- **Component Rendering**: Ensures components like `CatFactButton` and `CatFactDisplay` render correctly.
+- **API Calls**: Mocks API requests to the Cat Fact API and tests successful and unsuccessful fetch operations.
+- **Button Interactions**: Tests the button's functionality, including its disabled state during loading and its ability to fetch new facts.
+- **Loading and Error States**: Ensures that the app displays the appropriate UI when fetching data or encountering errors.
+
+### Example Test Commands:
+
+1. To run all tests:
    ```bash
-   git clone https://github.com/your-username/cat-facts-app.git
-   ```
+   npm run test
